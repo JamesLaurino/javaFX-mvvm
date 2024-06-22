@@ -1,0 +1,4 @@
+hello
+friend
+from
+hello file
