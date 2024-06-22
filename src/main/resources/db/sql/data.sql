@@ -1,0 +1,12 @@
+--liquibase formatted sql
+--changeset TPE:1
+CREATE TABLE UTILISATEUR (
+    ID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    NAME VARCHAR(255),
+    FIRSTNAME VARCHAR(255)
+);
+
+--liquibase formatted sql
+--changeset TPE:2
+INSERT INTO UTILISATEUR VALUES(1,'Aria', 'Stark');
+INSERT INTO UTILISATEUR VALUES(2,'Ned', 'Stark');
