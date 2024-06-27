@@ -4,10 +4,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import org.example.firstappfx.model.Person;
-import org.example.firstappfx.view.ListViewController;
-import org.example.firstappfx.view.PersonViewController;
-import org.example.firstappfx.viewmodel.PersonViewModel;
+import org.example.firstappfx.view.WendlerProgramViewController;
+import org.example.firstappfx.view.MainViewController;
+import org.example.firstappfx.viewmodel.MainViewModel;
+import org.example.firstappfx.viewmodel.WendlerProgramViewModel;
 
 import java.io.IOException;
 
@@ -19,19 +19,18 @@ public class NavigationManager {
         this.primaryStage = primaryStage;
     }
 
-    public void showPersonView() {
+    public void showMainView() {
         try
         {
             FXMLLoader loader = new FXMLLoader(
-                    getClass().getResource("/org/example/firstappfx/personView.fxml"));
+                    getClass().getResource("/mainView.fxml"));
 
             Parent root = loader.load();
 
-            Person person = new Person();
-            PersonViewModel personViewModel = new PersonViewModel(person);
-            PersonViewController controller = loader.getController();
+            MainViewModel mainViewModel = new MainViewModel();
+            MainViewController controller = loader.getController();
 
-            controller.setViewModel(personViewModel);
+            controller.setViewModel(mainViewModel);
             controller.setNavigationManager(this);
 
             primaryStage.setTitle("MVVM!");
@@ -44,14 +43,17 @@ public class NavigationManager {
         }
     }
 
-    public void showListView() {
+    public void showWendlerProgramView() {
         try
         {
             FXMLLoader loader = new FXMLLoader(getClass()
-                    .getResource("/org/example/firstappfx/listView.fxml"));
+                    .getResource("/wendlerProgramView.fxml"));
             Parent root = loader.load();
 
-            ListViewController controller = loader.getController();
+            WendlerProgramViewController controller = loader.getController();
+            WendlerProgramViewModel wendlerProgramViewModel = new WendlerProgramViewModel();
+
+            controller.setViewModel(wendlerProgramViewModel);
             controller.setNavigationManager(this);
 
             primaryStage.setScene(new Scene(root));

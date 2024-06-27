@@ -9,6 +9,13 @@ public class Person
     private FloatProperty benchMax;
     private FloatProperty deadliftMax;
 
+    public Person(StringProperty firstName, FloatProperty squatMax, FloatProperty benchMax, FloatProperty deadliftMax) {
+        this.firstName = firstName;
+        this.squatMax = squatMax;
+        this.benchMax = benchMax;
+        this.deadliftMax = deadliftMax;
+    }
+
     public Person() {
         this.firstName = new SimpleStringProperty("James");
         this.squatMax = new SimpleFloatProperty(120);

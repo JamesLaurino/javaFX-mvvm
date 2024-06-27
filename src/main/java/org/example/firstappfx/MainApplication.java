@@ -13,8 +13,9 @@ public class MainApplication extends Application
     @Override
     public void start(Stage primaryStage) throws IOException
     {
+
         NavigationManager navigationManager = new NavigationManager(primaryStage);
-        navigationManager.showPersonView();
+        navigationManager.showMainView();
     }
 
     public static void main(String[] args)

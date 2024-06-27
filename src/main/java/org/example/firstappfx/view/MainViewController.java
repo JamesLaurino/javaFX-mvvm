@@ -9,13 +9,13 @@ import javafx.scene.layout.VBox;
 import javafx.util.Duration;
 import javafx.util.converter.NumberStringConverter;
 import org.example.firstappfx.service.NavigationManager;
-import org.example.firstappfx.viewmodel.PersonViewModel;
+import org.example.firstappfx.viewmodel.MainViewModel;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
 
-public class PersonViewController implements Initializable
+public class MainViewController implements Initializable
 {
     @FXML
     TextField firstNameField;
@@ -36,28 +36,28 @@ public class PersonViewController implements Initializable
     Button toggleBtn;
 
     private NavigationManager navigationManager;
-    private PersonViewModel viewModel;
+    private MainViewModel mainViewModel;
 
     public void setNavigationManager(NavigationManager navigationManager) {
         this.navigationManager = navigationManager;
     }
 
-    public void setViewModel(PersonViewModel viewModel)
+    public void setViewModel(MainViewModel mainViewModel)
     {
-        this.viewModel = viewModel;
+        this.mainViewModel = mainViewModel;
         this.bindFields();
     }
 
     @FXML
     private void goToSceneListViewController()  {
-        this.navigationManager.showListView();
+        this.navigationManager.showWendlerProgramView();
     }
 
     private void bindFields() {
-        firstNameField.textProperty().bindBidirectional(viewModel.firstNameProperty());
-        benchField.textProperty().bindBidirectional(viewModel.benchMaxProperty(), new NumberStringConverter());
-        squatField.textProperty().bindBidirectional(viewModel.squatMaxProperty(), new NumberStringConverter());
-        deadliftField.textProperty().bindBidirectional(viewModel.deadliftMaxProperty(), new NumberStringConverter());
+        firstNameField.textProperty().bindBidirectional(mainViewModel.firstNameProperty());
+        benchField.textProperty().bindBidirectional(mainViewModel.benchMaxProperty(), new NumberStringConverter());
+        squatField.textProperty().bindBidirectional(mainViewModel.squatMaxProperty(), new NumberStringConverter());
+        deadliftField.textProperty().bindBidirectional(mainViewModel.deadliftMaxProperty(), new NumberStringConverter());
     }
 
     @Override

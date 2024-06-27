@@ -15,8 +15,13 @@ public class ListPersonMock {
         return ListPersonMock.personMockList;
     }
 
-    public PersonMock getOneByName(String name)
+    public static PersonMock getOneByName(String name)
     {
         return personMockList.stream().filter(personMock -> personMock.getName().equals(name)).findFirst().orElseThrow();
+    }
+
+    public static PersonMock getFirstRecord()
+    {
+        return personMockList.get(0);
     }
 }
