@@ -1,6 +1,6 @@
 package org.example.firstappfx.viewmodel;
 
-import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.FloatProperty;
 import javafx.beans.property.StringProperty;
 import org.example.firstappfx.model.Person;
 
@@ -18,14 +18,18 @@ public class PersonViewModel
         return person.firstNameProperty();
     }
 
-    public IntegerProperty livePointProperty()
+    public FloatProperty benchMaxProperty()
     {
-        return person.livePointProperty();
+        return person.benchMaxProperty();
     }
 
-    public StringProperty lastNameProperty()
+    public FloatProperty squatMaxProperty()
     {
-        return person.lastNameProperty();
+        return person.squatMaxProperty();
     }
 
+    public FloatProperty deadliftMaxProperty()
+    {
+        return person.deadliftMaxProperty();
+    }
 }

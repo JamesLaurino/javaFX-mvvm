@@ -1,32 +1,19 @@
 package org.example.firstappfx.model;
 
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
+import javafx.beans.property.*;
 
 public class Person
 {
     private StringProperty firstName;
-    private StringProperty lastName;
-    private IntegerProperty livePoint;
+    private FloatProperty squatMax;
+    private FloatProperty benchMax;
+    private FloatProperty deadliftMax;
 
     public Person() {
         this.firstName = new SimpleStringProperty("James");
-        this.lastName = new SimpleStringProperty("Laurino");
-        this.livePoint = new SimpleIntegerProperty(15);
-    }
-
-    public int getLivePoint() {
-        return livePoint.get();
-    }
-
-    public IntegerProperty livePointProperty() {
-        return livePoint;
-    }
-
-    public void setLivePoint(int livePoint) {
-        this.livePoint.set(livePoint);
+        this.squatMax = new SimpleFloatProperty(120);
+        this.benchMax = new SimpleFloatProperty(100);
+        this.deadliftMax = new SimpleFloatProperty(150);
     }
 
     public String getFirstName() {
@@ -41,15 +28,39 @@ public class Person
         this.firstName.set(firstName);
     }
 
-    public String getLastName() {
-        return lastName.get();
+    public float getSquatMax() {
+        return squatMax.get();
     }
 
-    public StringProperty lastNameProperty() {
-        return lastName;
+    public FloatProperty squatMaxProperty() {
+        return squatMax;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName.set(lastName);
+    public void setSquatMax(float squatMax) {
+        this.squatMax.set(squatMax);
+    }
+
+    public float getBenchMax() {
+        return benchMax.get();
+    }
+
+    public FloatProperty benchMaxProperty() {
+        return benchMax;
+    }
+
+    public void setBenchMax(float benchMax) {
+        this.benchMax.set(benchMax);
+    }
+
+    public float getDeadliftMax() {
+        return deadliftMax.get();
+    }
+
+    public FloatProperty deadliftMaxProperty() {
+        return deadliftMax;
+    }
+
+    public void setDeadliftMax(float deadliftMax) {
+        this.deadliftMax.set(deadliftMax);
     }
 }

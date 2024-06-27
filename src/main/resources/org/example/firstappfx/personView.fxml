@@ -10,15 +10,15 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.firstappfx.view.PersonViewController">
   <children>
-    <Label layoutX="315.0" layoutY="141.0" text="First Name:" />
-    <TextField fx:id="firstNameField" layoutX="391.0" layoutY="137.0" />
-    <Label layoutX="306.0" layoutY="186.0" prefHeight="27.0" prefWidth="77.0" text="Last Name:">
+    <Label layoutX="300.0" layoutY="69.0" text="First Name :" />
+    <TextField fx:id="firstNameField" layoutX="391.0" layoutY="65.0" />
+    <Label layoutX="305.0" layoutY="115.0" prefHeight="27.0" prefWidth="77.0" text="Bench :">
          <font>
             <Font size="14.0" />
          </font></Label>
-    <TextField fx:id="lastNameField" layoutX="391.0" layoutY="187.0" />
-      <TextField fx:id="livePointField" layoutX="391.0" layoutY="228.0" />
-      <Label layoutX="311.0" layoutY="225.0" prefHeight="31.0" prefWidth="68.0" text="Live point">
+    <TextField fx:id="benchField" layoutX="391.0" layoutY="115.0" />
+      <TextField fx:id="squatField" layoutX="391.0" layoutY="162.0" />
+      <Label layoutX="309.0" layoutY="159.0" prefHeight="31.0" prefWidth="68.0" text="Squat : ">
          <font>
             <Font size="14.0" />
          </font>
@@ -45,8 +45,12 @@
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </padding>
       </VBox>
-      <Button layoutX="180.0" layoutY="14.0"
-              fx:id="toggleBtn"
-              mnemonicParsing="false" text="open / close" />
+      <Button fx:id="toggleBtn" layoutX="180.0" layoutY="14.0" mnemonicParsing="false" text="open / close" />
+      <TextField fx:id="deadliftField" layoutX="391.0" layoutY="216.0" />
+      <Label layoutX="298.0" layoutY="213.0" prefHeight="31.0" prefWidth="68.0" text="Deadlift : ">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
   </children>
 </AnchorPane>

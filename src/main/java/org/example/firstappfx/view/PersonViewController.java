@@ -21,10 +21,13 @@ public class PersonViewController implements Initializable
     TextField firstNameField;
 
     @FXML
-    TextField lastNameField;
+    TextField benchField;
 
     @FXML
-    TextField livePointField;
+    TextField squatField;
+
+    @FXML
+    TextField deadliftField;
 
     @FXML
     VBox vBox;
@@ -52,8 +55,9 @@ public class PersonViewController implements Initializable
 
     private void bindFields() {
         firstNameField.textProperty().bindBidirectional(viewModel.firstNameProperty());
-        lastNameField.textProperty().bindBidirectional(viewModel.lastNameProperty());
-        livePointField.textProperty().bindBidirectional(viewModel.livePointProperty(), new NumberStringConverter());
+        benchField.textProperty().bindBidirectional(viewModel.benchMaxProperty(), new NumberStringConverter());
+        squatField.textProperty().bindBidirectional(viewModel.squatMaxProperty(), new NumberStringConverter());
+        deadliftField.textProperty().bindBidirectional(viewModel.deadliftMaxProperty(), new NumberStringConverter());
     }
 
     @Override
