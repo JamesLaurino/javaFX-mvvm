@@ -13,33 +13,17 @@ import java.util.List;
 public class WendlerProgramViewController
 {
 
+            /* BENCH */
     @FXML
-    Label waveFiveFirstVal;
+    Label waveFiveFirstVal, waveFiveSecondVal, waveFiveThirdVal;
 
     @FXML
-    Label waveFiveSecondVal;
+    Label waveThreeFirstVal, waveThreeSecondVal, waveThreeThirdVal;
 
     @FXML
-    Label waveFiveThirdVal;
+    Label waveOneFirstVal, waveOneSecondVal, waveOneThirdVal;
 
-    @FXML
-    Label waveThreeFirstVal;
-
-    @FXML
-    Label waveThreeSecondVal;
-
-    @FXML
-    Label  waveThreeThirdVal;
-
-    @FXML
-    Label waveOneFirstVal;
-
-    @FXML
-    Label waveOneSecondVal;
-
-    @FXML
-    Label waveOneThirdVal;
-
+            /* SQUAT */
     @FXML
     Label metaData, boringButBigBench, boringButBigSquat, boringButBigDead;
 
@@ -47,19 +31,21 @@ public class WendlerProgramViewController
     Label waveFiveFirstValSquat, waveFiveSecondValSquat, waveFiveThirdValSquat;
 
     @FXML
-    Label waveFiveFirstValDeadlift, waveFiveSecondValDeadlift, waveFiveThirdValDeadlift;
-
-    @FXML
     Label waveThreeFirstValSquat, waveThreeSecondValSquat, waveThreeThirdValSquat;
-
-    @FXML
-    Label waveThreeFirstValDead, waveThreeSecondValDead, waveThreeThirdValDead;
 
     @FXML
     Label waveOneThirdValSquat, waveOneSecondValSquat, waveOneFirstValSquat;
 
+            /* DEADLIFT */
+    @FXML
+    Label waveThreeFirstValDead, waveThreeSecondValDead, waveThreeThirdValDead;
+
     @FXML
     Label waveOneFirstValDead, waveOneSecondValDead, waveOneThirdValDead;
+
+    @FXML
+    Label waveFiveFirstValDeadlift, waveFiveSecondValDeadlift, waveFiveThirdValDeadlift;
+
 
     private NavigationManager navigationManager;
     private WendlerProgramViewModel wendlerProgramViewModel;
