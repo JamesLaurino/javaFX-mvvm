@@ -19,6 +19,7 @@ public class WaveCalculator
     public List<FloatProperty> computeThirdWave(FloatProperty maxUser)
     {
         float maxUserFloat = maxUser.floatValue();
+        maxUserFloat = maxUserFloat * 0.90F;
         float firstVal = maxUserFloat * 0.70F;
         float secondVal = maxUserFloat * 0.80F;
         float thirdVal = maxUserFloat * 0.90F;
@@ -27,6 +28,7 @@ public class WaveCalculator
     public List<FloatProperty> computeOneWave(FloatProperty maxUser)
     {
         float maxUserFloat = maxUser.floatValue();
+        maxUserFloat = maxUserFloat * 0.90F;
         float firstVal = maxUserFloat * 0.75F;
         float secondVal = maxUserFloat * 0.85F;
         float thirdVal = maxUserFloat * 0.95F;
