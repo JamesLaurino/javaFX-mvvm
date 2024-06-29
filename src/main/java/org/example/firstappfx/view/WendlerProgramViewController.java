@@ -41,7 +41,7 @@ public class WendlerProgramViewController
     Label waveOneThirdVal;
 
     @FXML
-    Label metaData;
+    Label metaData, boringButBigBench, boringButBigSquat, boringButBigDead;
 
     @FXML
     Label waveFiveFirstValSquat, waveFiveSecondValSquat, waveFiveThirdValSquat;
@@ -80,6 +80,9 @@ public class WendlerProgramViewController
     private void bindMetaDataField()
     {
         metaData.textProperty().bindBidirectional(wendlerProgramViewModel.getBenchMax(), new NumberStringConverter());
+        boringButBigBench.textProperty().bindBidirectional(waveCalculator.computeBBB(wendlerProgramViewModel.getBenchMax()), new NumberStringConverter());
+        boringButBigSquat.textProperty().bindBidirectional(waveCalculator.computeBBB(wendlerProgramViewModel.getSquatMax()), new NumberStringConverter());
+        boringButBigDead.textProperty().bindBidirectional(waveCalculator.computeBBB(wendlerProgramViewModel.getdeadliftMax()), new NumberStringConverter());
     }
 
     private void bindFieldsDeadLiftWave()

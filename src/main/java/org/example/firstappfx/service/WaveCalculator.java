@@ -35,5 +35,12 @@ public class WaveCalculator
         return List.of(new SimpleFloatProperty(firstVal),new SimpleFloatProperty(secondVal),new SimpleFloatProperty(thirdVal));
     }
 
+    public FloatProperty computeBBB(FloatProperty maxUser)
+    {
+        float maxUserFloat = maxUser.floatValue();
+        maxUserFloat = maxUserFloat * 0.90F;
+        maxUserFloat = maxUserFloat * 0.65F;
+        return new  SimpleFloatProperty(maxUserFloat);
+    }
 
 }
