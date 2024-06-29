@@ -49,6 +49,18 @@ public class WendlerProgramViewController
     @FXML
     Label waveFiveFirstValDeadlift, waveFiveSecondValDeadlift, waveFiveThirdValDeadlift;
 
+    @FXML
+    Label waveThreeFirstValSquat, waveThreeSecondValSquat, waveThreeThirdValSquat;
+
+    @FXML
+    Label waveThreeFirstValDead, waveThreeSecondValDead, waveThreeThirdValDead;
+
+    @FXML
+    Label waveOneThirdValSquat, waveOneSecondValSquat, waveOneFirstValSquat;
+
+    @FXML
+    Label waveOneFirstValDead, waveOneSecondValDead, waveOneThirdValDead;
+
     private NavigationManager navigationManager;
     private WendlerProgramViewModel wendlerProgramViewModel;
     private WaveCalculator waveCalculator = new WaveCalculator();
@@ -73,20 +85,46 @@ public class WendlerProgramViewController
     private void bindFieldsDeadLiftWave()
     {
         List<FloatProperty> wavePropertyList = waveCalculator.computeFiveWave(wendlerProgramViewModel.getdeadliftMax());
+        List<FloatProperty> wavePropertyListThirdVal = waveCalculator.computeThirdWave(wendlerProgramViewModel.getdeadliftMax());
+        List<FloatProperty> wavePropertyListOneVal = waveCalculator.computeOneWave(wendlerProgramViewModel.getdeadliftMax());
+
+        /* 5s DEADLIFT */
         waveFiveFirstValDeadlift.textProperty().bindBidirectional(wavePropertyList.get(0), new NumberStringConverter());
         waveFiveSecondValDeadlift.textProperty().bindBidirectional(wavePropertyList.get(1), new NumberStringConverter());
         waveFiveThirdValDeadlift.textProperty().bindBidirectional(wavePropertyList.get(2), new NumberStringConverter());
 
+        /* 3s DEADLIFT*/
+        waveThreeFirstValDead.textProperty().bindBidirectional(wavePropertyListThirdVal.get(0), new NumberStringConverter());
+        waveThreeSecondValDead.textProperty().bindBidirectional(wavePropertyListThirdVal.get(1), new NumberStringConverter());
+        waveThreeThirdValDead.textProperty().bindBidirectional(wavePropertyListThirdVal.get(2), new NumberStringConverter());
+
+        /* 1s DEADLIFT */
+        waveOneFirstValDead.textProperty().bindBidirectional(wavePropertyListOneVal.get(0), new NumberStringConverter());
+        waveOneSecondValDead.textProperty().bindBidirectional(wavePropertyListOneVal.get(1), new NumberStringConverter());
+        waveOneThirdValDead.textProperty().bindBidirectional(wavePropertyListOneVal.get(2), new NumberStringConverter());
     }
 
     private void bindFieldsSquatWave()
     {
         List<FloatProperty> wavePropertyList = waveCalculator.computeFiveWave(wendlerProgramViewModel.getSquatMax());
+        List<FloatProperty> waveThreePropertyList = waveCalculator.computeThirdWave(wendlerProgramViewModel.getSquatMax());
+        List<FloatProperty> waveThreePropertyListOne = waveCalculator.computeOneWave(wendlerProgramViewModel.getSquatMax());
 
         /* 5s SQUAT */
         waveFiveFirstValSquat.textProperty().bindBidirectional(wavePropertyList.get(0), new NumberStringConverter());
         waveFiveSecondValSquat.textProperty().bindBidirectional(wavePropertyList.get(1), new NumberStringConverter());
         waveFiveThirdValSquat.textProperty().bindBidirectional(wavePropertyList.get(2), new NumberStringConverter());
+
+        /* 3s SQUAT */
+        waveThreeFirstValSquat.textProperty().bindBidirectional(waveThreePropertyList.get(0), new NumberStringConverter());
+        waveThreeSecondValSquat.textProperty().bindBidirectional(waveThreePropertyList.get(1), new NumberStringConverter());
+        waveThreeThirdValSquat.textProperty().bindBidirectional(waveThreePropertyList.get(2), new NumberStringConverter());
+
+        /* 1s SQUAT */
+        waveOneThirdValSquat.textProperty().bindBidirectional(waveThreePropertyListOne.get(0), new NumberStringConverter());
+        waveOneSecondValSquat.textProperty().bindBidirectional(waveThreePropertyListOne.get(1), new NumberStringConverter());
+        waveOneFirstValSquat.textProperty().bindBidirectional(waveThreePropertyListOne.get(2), new NumberStringConverter());
+
     }
 
     private void bindFieldsBenchWave() {

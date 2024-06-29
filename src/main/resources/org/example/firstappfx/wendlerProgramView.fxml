@@ -332,7 +332,7 @@
                               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                            </padding>
                         </VBox>
-                        <VBox layoutX="780.0" layoutY="382.0" prefHeight="125.0" prefWidth="154.0">
+                        <VBox layoutX="795.0" layoutY="373.0" prefHeight="125.0" prefWidth="136.0">
                            <children>
                               <Label prefHeight="35.0" prefWidth="93.0" text="65%  x5" textFill="#9b1a1a">
                                  <font>
@@ -357,7 +357,7 @@
                               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                            </padding>
                         </VBox>
-                        <VBox layoutX="769.0" layoutY="619.0" prefHeight="125.0" prefWidth="154.0">
+                        <VBox layoutX="786.0" layoutY="619.0" prefHeight="125.0" prefWidth="154.0">
                            <children>
                               <Label prefHeight="35.0" prefWidth="93.0" text="65%  x5" textFill="#9b1a1a">
                                  <font>
@@ -460,6 +460,118 @@
                                  <padding>
                                     <Insets bottom="10.0" />
                                  </padding>
+                              </Label>
+                           </children>
+                           <padding>
+                              <Insets bottom="25.0" left="25.0" right="25.0" top="10.0" />
+                           </padding>
+                        </VBox>
+                        <VBox layoutX="602.0" layoutY="368.0" prefHeight="135.0" prefWidth="114.0">
+                           <children>
+                              <Label fx:id="waveThreeFirstValSquat" prefHeight="23.0" prefWidth="63.0" text="Label" textFill="#f6f3f3">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets bottom="10.0" right="10.0" />
+                                 </padding>
+                              </Label>
+                              <Label fx:id="waveThreeSecondValSquat" prefHeight="22.0" prefWidth="49.0" text="Label" textFill="#fcf5f5">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets bottom="10.0" />
+                                 </padding>
+                              </Label>
+                              <Label fx:id="waveThreeThirdValSquat" prefHeight="23.0" prefWidth="63.0" text="Label" textFill="#f3eeee">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <padding>
+                              <Insets bottom="25.0" left="25.0" right="25.0" top="10.0" />
+                           </padding>
+                        </VBox>
+                        <VBox layoutX="960.0" layoutY="371.0" prefHeight="135.0" prefWidth="114.0">
+                           <children>
+                              <Label fx:id="waveThreeFirstValDead" prefHeight="23.0" prefWidth="63.0" text="Label" textFill="#f6f3f3">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets bottom="10.0" right="10.0" />
+                                 </padding>
+                              </Label>
+                              <Label fx:id="waveThreeSecondValDead" prefHeight="22.0" prefWidth="49.0" text="Label" textFill="#fcf5f5">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets bottom="10.0" />
+                                 </padding>
+                              </Label>
+                              <Label fx:id="waveThreeThirdValDead" prefHeight="23.0" prefWidth="63.0" text="Label" textFill="#f3eeee">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <padding>
+                              <Insets bottom="25.0" left="25.0" right="25.0" top="10.0" />
+                           </padding>
+                        </VBox>
+                        <VBox layoutX="590.0" layoutY="628.0" prefHeight="135.0" prefWidth="114.0">
+                           <children>
+                              <Label fx:id="waveOneFirstValSquat" prefHeight="23.0" prefWidth="63.0" text="Label" textFill="#f6f3f3">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets bottom="10.0" right="10.0" />
+                                 </padding>
+                              </Label>
+                              <Label fx:id="waveOneSecondValSquat" prefHeight="22.0" prefWidth="49.0" text="Label" textFill="#fcf5f5">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets bottom="10.0" />
+                                 </padding>
+                              </Label>
+                              <Label fx:id="waveOneThirdValSquat" prefHeight="23.0" prefWidth="63.0" text="Label" textFill="#f3eeee">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <padding>
+                              <Insets bottom="25.0" left="25.0" right="25.0" top="10.0" />
+                           </padding>
+                        </VBox>
+                        <VBox layoutX="960.0" layoutY="614.0" prefHeight="135.0" prefWidth="129.0">
+                           <children>
+                              <Label fx:id="waveOneFirstValDead" prefHeight="37.0" prefWidth="79.0" text="Label" textFill="#f6f3f3">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets bottom="10.0" right="10.0" />
+                                 </padding>
+                              </Label>
+                              <Label fx:id="waveOneSecondValDead" prefHeight="37.0" prefWidth="80.0" text="Label" textFill="#fcf5f5">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets bottom="10.0" />
+                                 </padding>
+                              </Label>
+                              <Label fx:id="waveOneThirdValDead" prefHeight="27.0" prefWidth="78.0" text="Label" textFill="#f3eeee">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
                               </Label>
                            </children>
                            <padding>
