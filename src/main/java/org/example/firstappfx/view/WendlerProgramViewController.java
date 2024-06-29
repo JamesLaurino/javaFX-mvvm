@@ -40,6 +40,15 @@ public class WendlerProgramViewController
     @FXML
     Label waveOneThirdVal;
 
+    @FXML
+    Label metaData;
+
+    @FXML
+    Label waveFiveFirstValSquat, waveFiveSecondValSquat, waveFiveThirdValSquat;
+
+    @FXML
+    Label waveFiveFirstValDeadlift, waveFiveSecondValDeadlift, waveFiveThirdValDeadlift;
+
     private NavigationManager navigationManager;
     private WendlerProgramViewModel wendlerProgramViewModel;
     private WaveCalculator waveCalculator = new WaveCalculator();
@@ -52,6 +61,32 @@ public class WendlerProgramViewController
     {
         this.wendlerProgramViewModel = wendlerProgramViewModel;
         this.bindFieldsBenchWave();
+        this.bindMetaDataField();
+        this.bindFieldsSquatWave();
+        this.bindFieldsDeadLiftWave();
+    }
+    private void bindMetaDataField()
+    {
+        metaData.textProperty().bindBidirectional(wendlerProgramViewModel.getBenchMax(), new NumberStringConverter());
+    }
+
+    private void bindFieldsDeadLiftWave()
+    {
+        List<FloatProperty> wavePropertyList = waveCalculator.computeFiveWave(wendlerProgramViewModel.getdeadliftMax());
+        waveFiveFirstValDeadlift.textProperty().bindBidirectional(wavePropertyList.get(0), new NumberStringConverter());
+        waveFiveSecondValDeadlift.textProperty().bindBidirectional(wavePropertyList.get(1), new NumberStringConverter());
+        waveFiveThirdValDeadlift.textProperty().bindBidirectional(wavePropertyList.get(2), new NumberStringConverter());
+
+    }
+
+    private void bindFieldsSquatWave()
+    {
+        List<FloatProperty> wavePropertyList = waveCalculator.computeFiveWave(wendlerProgramViewModel.getSquatMax());
+
+        /* 5s SQUAT */
+        waveFiveFirstValSquat.textProperty().bindBidirectional(wavePropertyList.get(0), new NumberStringConverter());
+        waveFiveSecondValSquat.textProperty().bindBidirectional(wavePropertyList.get(1), new NumberStringConverter());
+        waveFiveThirdValSquat.textProperty().bindBidirectional(wavePropertyList.get(2), new NumberStringConverter());
     }
 
     private void bindFieldsBenchWave() {
