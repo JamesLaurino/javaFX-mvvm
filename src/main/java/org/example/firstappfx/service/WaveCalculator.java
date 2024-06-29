@@ -10,6 +10,7 @@ public class WaveCalculator
     public List<FloatProperty> computeFiveWave(FloatProperty maxUser)
     {
         float maxUserFloat = maxUser.floatValue();
+        maxUserFloat = maxUserFloat * 0.90F;
         float firstVal = maxUserFloat * 0.65F;
         float secondVal = maxUserFloat * 0.75F;
         float thirdVal = maxUserFloat * 0.85F;
