@@ -9,13 +9,10 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="629.0" prefWidth="921.0" style="-fx-background-color: BLACK;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.firstappfx.view.MainViewController">
+<AnchorPane prefHeight="629.0" prefWidth="921.0" style="-fx-background-color: BLACK;"
+            xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.firstappfx.view.MainViewController">
   <children>
-      <Button layoutX="362.0" layoutY="435.0" mnemonicParsing="false" onMouseClicked="#goToSceneListViewController" prefHeight="59.0" prefWidth="189.0" text="Program 5-3-1">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Button>
       <VBox fx:id="vBox" layoutX="-2.0" prefHeight="629.0" prefWidth="174.0">
          <children>
             <Button mnemonicParsing="false" onMouseClicked="#goToSceneListViewController" prefHeight="46.0" prefWidth="173.0" text="5/3/1">
@@ -28,17 +25,22 @@
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </VBox.margin>
             </Button>
+            <Button mnemonicParsing="false" prefHeight="46.0" prefWidth="131.0" text="MAXI">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+            </Button>
          </children>
          <padding>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </padding>
       </VBox>
-      <Button fx:id="toggleBtn" layoutX="182.0" layoutY="25.0" mnemonicParsing="false" text="open / close" />
-      <VBox layoutX="597.0" layoutY="116.0" prefHeight="311.0" prefWidth="280.0" spacing="3.0" style="-fx-background-color: BLACK;">
+      <Button fx:id="toggleBtn" layoutX="182.0" layoutY="25.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="48.0" text="&lt;=&gt;" />
+      <VBox layoutX="307.0" layoutY="108.0" prefHeight="358.0" prefWidth="280.0" spacing="3.0" style="-fx-background-color: BLACK;">
          <children>
             <HBox prefHeight="51.0" prefWidth="280.0">
                <children>
-                <Label prefHeight="28.0" prefWidth="129.0" text="First Name :" textFill="#f6f5f5">
+                <Label prefHeight="28.0" prefWidth="129.0" text="Name :" textFill="#f6f5f5">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -80,12 +82,19 @@
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </padding>
                <children>
-                  <Label prefHeight="33.0" prefWidth="120.0" text="Deadlift : " textFill="#fcf7f7">
+                  <Label prefHeight="33.0" prefWidth="117.0" text="Deadlift : " textFill="#fcf7f7">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="deadliftField" prefHeight="28.0" prefWidth="145.0" />
+                  <TextField fx:id="deadliftField" prefHeight="28.0" prefWidth="143.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="74.0" prefWidth="280.0">
+               <children>
+                  <Button alignment="CENTER" mnemonicParsing="false"
+                          onMouseClicked="#goToSaveViewController"
+                          prefHeight="39.0" prefWidth="93.0" text="Save values" />
                </children>
             </HBox>
          </children>

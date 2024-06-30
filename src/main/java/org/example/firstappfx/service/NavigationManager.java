@@ -5,9 +5,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.example.firstappfx.service.mock.PersonMock;
+import org.example.firstappfx.view.SaveViewController;
 import org.example.firstappfx.view.WendlerProgramViewController;
 import org.example.firstappfx.view.MainViewController;
 import org.example.firstappfx.viewmodel.MainViewModel;
+import org.example.firstappfx.viewmodel.SaveViewModel;
 import org.example.firstappfx.viewmodel.WendlerProgramViewModel;
 
 import java.io.IOException;
@@ -41,6 +43,30 @@ public class NavigationManager {
         } catch (IOException e)
         {
             throw new RuntimeException(e);
+        }
+    }
+
+    public void showSaveView(PersonMock personMockUser)
+    {
+        try
+        {
+            FXMLLoader loader = new FXMLLoader(getClass()
+                    .getResource("/saveView.fxml"));
+            Parent root = loader.load();
+
+            SaveViewController controller = loader.getController();
+            SaveViewModel saveViewModel = new SaveViewModel(personMockUser);
+
+            controller.setViewModel(saveViewModel);
+            controller.setNavigationManager(this);
+
+            primaryStage.setScene(new Scene(root));
+            primaryStage.setTitle("MVVM II");
+            primaryStage.show();
+
+        } catch (IOException e)
+        {
+            e.printStackTrace();
         }
     }
 

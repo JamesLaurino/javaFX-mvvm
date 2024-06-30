@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.util.Duration;
 import javafx.util.converter.NumberStringConverter;
@@ -89,5 +90,16 @@ public class MainViewController implements Initializable
                 closeNav.play();
             }
         });
+    }
+
+    public void goToSaveViewController()
+    {
+        PersonMock personMock = new PersonMock(
+                firstNameField.getText().toString(),
+                Float.valueOf(benchField.getText().toString()),
+                Float.valueOf(deadliftField.getText().toString()),
+                Float.valueOf(squatField.getText().toString()));
+
+        this.navigationManager.showSaveView(personMock);
     }
 }

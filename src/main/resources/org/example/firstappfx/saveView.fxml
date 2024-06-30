@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: BLACK;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.firstappfx.view.SaveViewController">
+   <children>
+      <Label layoutX="156.0" layoutY="164.0" text="Values saved with success !" textFill="#fefcfc">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Button layoutX="234.0" layoutY="259.0" mnemonicParsing="false"
+              onMouseClicked="#gotoMainProgram"
+              prefHeight="47.0" prefWidth="131.0" text="main menu">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
