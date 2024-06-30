@@ -4,6 +4,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.example.firstappfx.service.mock.PersonMock;
 import org.example.firstappfx.view.WendlerProgramViewController;
 import org.example.firstappfx.view.MainViewController;
 import org.example.firstappfx.viewmodel.MainViewModel;
@@ -33,7 +34,7 @@ public class NavigationManager {
             controller.setViewModel(mainViewModel);
             controller.setNavigationManager(this);
 
-            primaryStage.setTitle("MVVM!");
+            primaryStage.setTitle("MVVM I");
             primaryStage.setScene(new Scene(root));
             primaryStage.show();
 
@@ -43,7 +44,7 @@ public class NavigationManager {
         }
     }
 
-    public void showWendlerProgramView() {
+    public void showWendlerProgramView(PersonMock personMockUser) {
         try
         {
             FXMLLoader loader = new FXMLLoader(getClass()
@@ -51,13 +52,13 @@ public class NavigationManager {
             Parent root = loader.load();
 
             WendlerProgramViewController controller = loader.getController();
-            WendlerProgramViewModel wendlerProgramViewModel = new WendlerProgramViewModel();
+            WendlerProgramViewModel wendlerProgramViewModel = new WendlerProgramViewModel(personMockUser);
 
             controller.setViewModel(wendlerProgramViewModel);
             controller.setNavigationManager(this);
 
             primaryStage.setScene(new Scene(root));
-            primaryStage.setTitle("MVVM 2!");
+            primaryStage.setTitle("MVVM II");
             primaryStage.show();
 
         } catch (IOException e)

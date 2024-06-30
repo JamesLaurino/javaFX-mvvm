@@ -7,6 +7,8 @@ import org.example.firstappfx.model.mapper.MockToEntity;
 import org.example.firstappfx.service.mock.ListPersonMock;
 import org.example.firstappfx.service.mock.PersonMock;
 
+import static org.example.firstappfx.service.mock.ListPersonMock.personMockList;
+
 
 public class MainViewModel
 {
@@ -14,6 +16,9 @@ public class MainViewModel
     private Person person;
 
     public MainViewModel() {
+        if(personMockList.isEmpty())
+            personMockList.add(new PersonMock("Stark",120F,150F,200F));
+
         this.personMock = ListPersonMock.getFirstRecord();
         this.person = new MockToEntity().PersonMockToPerson(this.personMock);
     }
@@ -32,6 +37,7 @@ public class MainViewModel
     {
         return person.squatMaxProperty();
     }
+
 
     public FloatProperty deadliftMaxProperty()
     {

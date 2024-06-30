@@ -9,10 +9,13 @@ import javafx.scene.layout.VBox;
 import javafx.util.Duration;
 import javafx.util.converter.NumberStringConverter;
 import org.example.firstappfx.service.NavigationManager;
+import org.example.firstappfx.service.mock.PersonMock;
 import org.example.firstappfx.viewmodel.MainViewModel;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import static org.example.firstappfx.service.mock.ListPersonMock.personMockList;
 
 
 public class MainViewController implements Initializable
@@ -50,8 +53,17 @@ public class MainViewController implements Initializable
 
     @FXML
     private void goToSceneListViewController()  {
-        this.navigationManager.showWendlerProgramView();
+        PersonMock personMock = new PersonMock(
+                firstNameField.getText().toString(),
+                Float.valueOf(benchField.getText().toString()),
+                Float.valueOf(deadliftField.getText().toString()),
+                Float.valueOf(squatField.getText().toString()));
+
+        personMockList.remove(0);
+        personMockList.add(personMock);
+        this.navigationManager.showWendlerProgramView(personMock);
     }
+
 
     private void bindFields() {
         firstNameField.textProperty().bindBidirectional(mainViewModel.firstNameProperty());
