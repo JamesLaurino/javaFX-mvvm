@@ -5,6 +5,7 @@ import java.util.List;
 
 public class ListPersonMock {
 
+    /* GET FROM DB THE ITEM*/
     public static List<PersonMock> personMockList = new ArrayList<>();
 
     public List<PersonMock> getAllMocks()

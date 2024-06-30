@@ -11,11 +11,18 @@ public class PersonMock
     private Float maxDeadlift;
     private Float maxSquat;
 
+    public PersonMock(){}
+
     public PersonMock(String name, Float maxBench, Float maxDeadlift, Float maxSquat) {
         this.name = name;
         this.maxBench = maxBench;
         this.maxDeadlift = maxDeadlift;
         this.maxSquat = maxSquat;
+    }
+
+    @Override
+    public String toString() {
+        return this.getName() + "," + this.getMaxBench() + "," + this.getMaxDeadlift() + "," + this.getMaxSquat();
     }
 
     public String getName() {

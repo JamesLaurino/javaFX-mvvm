@@ -15,4 +15,6 @@ module org.example.firstappfx {
     exports org.example.firstappfx.view;
     exports org.example.firstappfx.viewmodel;
     exports org.example.firstappfx.service;
+    exports org.example.firstappfx.service.file;
+    opens org.example.firstappfx.service.file to javafx.fxml;
 }
