@@ -12,8 +12,6 @@ public class FileAdder
 
     public void writeToFile(String data) {
 
-        boolean isWritten = false;
-
         try (FileWriter fileWriter = new FileWriter(FILE_PATH);
              BufferedWriter bufferedWriter = new BufferedWriter(fileWriter)) {
 

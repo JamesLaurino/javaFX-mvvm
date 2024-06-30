@@ -34,7 +34,6 @@ public class WaveCalculator
         float thirdVal = maxUserFloat * 0.95F;
         return List.of(new SimpleFloatProperty(firstVal),new SimpleFloatProperty(secondVal),new SimpleFloatProperty(thirdVal));
     }
-
     public FloatProperty computeBBB(FloatProperty maxUser)
     {
         float maxUserFloat = maxUser.floatValue();
