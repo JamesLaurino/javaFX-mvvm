@@ -1,22 +1,22 @@
-package org.example.firstappfx.model;
+package org.example.firstappfx.model.dto;
 
 import javafx.beans.property.*;
 
-public class Person
+public class PersonDto
 {
     private StringProperty firstName;
     private FloatProperty squatMax;
     private FloatProperty benchMax;
     private FloatProperty deadliftMax;
 
-    public Person(StringProperty firstName, FloatProperty squatMax, FloatProperty benchMax, FloatProperty deadliftMax) {
+    public PersonDto(StringProperty firstName, FloatProperty squatMax, FloatProperty benchMax, FloatProperty deadliftMax) {
         this.firstName = firstName;
         this.squatMax = squatMax;
         this.benchMax = benchMax;
         this.deadliftMax = deadliftMax;
     }
 
-    public Person() {
+    public PersonDto() {
         this.firstName = new SimpleStringProperty("James");
         this.squatMax = new SimpleFloatProperty(120);
         this.benchMax = new SimpleFloatProperty(100);

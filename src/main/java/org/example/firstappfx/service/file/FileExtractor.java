@@ -1,6 +1,6 @@
 package org.example.firstappfx.service.file;
 
-import org.example.firstappfx.service.mock.PersonMock;
+import org.example.firstappfx.model.entity.PersonEntity;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -13,27 +13,27 @@ public class FileExtractor
 
     public FileExtractor() {}
 
-    public PersonMock extractionAndParsed()
+    public PersonEntity extractionAndParsed()
     {
-        PersonMock personMock = new PersonMock();
+        PersonEntity personEntity = new PersonEntity();
         try {
 
             File myObj = new File(FILE_PATH);
             Scanner myReader = new Scanner(myObj);
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
-                personMock = parsing(data);
+                personEntity = parsing(data);
             }
             myReader.close();
         } catch (FileNotFoundException e) {
             System.out.println("An error occurred during the extraction of the file");
             e.printStackTrace();
         }
-        return personMock;
+        return personEntity;
 
     }
 
-    private PersonMock parsing(String ligne)
+    private PersonEntity parsing(String ligne)
     {
         String[] ligneParsed = ligne.split(",");
         String name = ligneParsed[0];
@@ -41,7 +41,7 @@ public class FileExtractor
         String deadMax = ligneParsed[2];
         String squatMax = ligneParsed[3];
 
-        return new PersonMock(name, Float.valueOf(benchMax), Float.valueOf(deadMax), Float.valueOf(squatMax));
+        return new PersonEntity(name, Float.valueOf(benchMax), Float.valueOf(deadMax), Float.valueOf(squatMax));
 
     }
 }

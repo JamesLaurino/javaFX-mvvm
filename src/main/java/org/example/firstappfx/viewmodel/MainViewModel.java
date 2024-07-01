@@ -2,52 +2,51 @@ package org.example.firstappfx.viewmodel;
 
 import javafx.beans.property.FloatProperty;
 import javafx.beans.property.StringProperty;
-import org.example.firstappfx.model.Person;
-import org.example.firstappfx.model.mapper.MockToEntity;
+import org.example.firstappfx.model.dto.PersonDto;
+import org.example.firstappfx.model.mapper.DtoToEntity;
+import org.example.firstappfx.service.data.PersonEntityDataService;
 import org.example.firstappfx.service.file.FileExtractor;
-import org.example.firstappfx.service.mock.ListPersonMock;
-import org.example.firstappfx.service.mock.PersonMock;
+import org.example.firstappfx.model.entity.PersonEntity;
 
-import static org.example.firstappfx.service.mock.ListPersonMock.personMockList;
+import static org.example.firstappfx.service.data.PersonEntityDataService.personEntityListService;
 
 
 public class MainViewModel
 {
-    FileExtractor fileExtractor;
-
-    private PersonMock personMock;
-    private Person person;
+    private FileExtractor fileExtractor;
+    private PersonEntity personEntity;
+    private PersonDto personDto;
 
     public MainViewModel() {
 
         this.fileExtractor = new FileExtractor();
-        PersonMock personMockUser = this.fileExtractor.extractionAndParsed();
+        PersonEntity personEntityUser = this.fileExtractor.extractionAndParsed();
 
-        if(personMockList.isEmpty())
-            personMockList.add(personMockUser);
+        if(personEntityListService.isEmpty())
+            personEntityListService.add(personEntityUser);
 
-        this.personMock = ListPersonMock.getFirstRecord();
-        this.person = new MockToEntity().PersonMockToPerson(this.personMock);
+        this.personEntity = PersonEntityDataService.getFirstRecord();
+        this.personDto = new DtoToEntity().PersonEntityToPersonDto(this.personEntity);
     }
 
     public StringProperty firstNameProperty()
     {
-        return person.firstNameProperty();
+        return personDto.firstNameProperty();
     }
 
     public FloatProperty benchMaxProperty()
     {
-        return person.benchMaxProperty();
+        return personDto.benchMaxProperty();
     }
 
     public FloatProperty squatMaxProperty()
     {
-        return person.squatMaxProperty();
+        return personDto.squatMaxProperty();
     }
 
 
     public FloatProperty deadliftMaxProperty()
     {
-        return person.deadliftMaxProperty();
+        return personDto.deadliftMaxProperty();
     }
 }

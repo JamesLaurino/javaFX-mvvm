@@ -1,19 +1,15 @@
-package org.example.firstappfx.service.mock;
+package org.example.firstappfx.model.entity;
 
-import org.example.firstappfx.model.Person;
-
-import java.util.List;
-
-public class PersonMock
+public class PersonEntity
 {
     private String name;
     private Float maxBench;
     private Float maxDeadlift;
     private Float maxSquat;
 
-    public PersonMock(){}
+    public PersonEntity(){}
 
-    public PersonMock(String name, Float maxBench, Float maxDeadlift, Float maxSquat) {
+    public PersonEntity(String name, Float maxBench, Float maxDeadlift, Float maxSquat) {
         this.name = name;
         this.maxBench = maxBench;
         this.maxDeadlift = maxDeadlift;

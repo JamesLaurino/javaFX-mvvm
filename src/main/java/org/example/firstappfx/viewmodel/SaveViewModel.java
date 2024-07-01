@@ -1,10 +1,10 @@
 package org.example.firstappfx.viewmodel;
 
-import org.example.firstappfx.service.mock.PersonMock;
+import org.example.firstappfx.model.entity.PersonEntity;
 
 public class SaveViewModel
 {
-    public SaveViewModel(PersonMock personMockUser)
+    public SaveViewModel(PersonEntity personEntityUser)
     {
 
     }

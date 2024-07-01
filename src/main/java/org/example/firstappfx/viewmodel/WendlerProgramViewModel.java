@@ -1,39 +1,36 @@
 package org.example.firstappfx.viewmodel;
 
 import javafx.beans.property.FloatProperty;
-import org.example.firstappfx.model.Person;
-import org.example.firstappfx.model.mapper.MockToEntity;
+import org.example.firstappfx.model.dto.PersonDto;
+import org.example.firstappfx.model.mapper.DtoToEntity;
 import org.example.firstappfx.service.file.FileAdder;
-import org.example.firstappfx.service.file.FileExtractor;
-import org.example.firstappfx.service.mock.PersonMock;
-
-import java.io.FileWriter;
+import org.example.firstappfx.model.entity.PersonEntity;
 
 public class WendlerProgramViewModel
 {
-    private PersonMock personMock;
-    private Person person;
+    private PersonEntity personEntity;
+    private PersonDto personDto;
     private FileAdder fileAdder;
 
-    public WendlerProgramViewModel(PersonMock personMockUser) {
+    public WendlerProgramViewModel(PersonEntity personEntityUser) {
         this.fileAdder = new FileAdder();
-        this.fileAdder.writeToFile(personMockUser.toString());
-        this.personMock = personMockUser;
-        this.person = new MockToEntity().PersonMockToPerson(this.personMock);
+        this.fileAdder.writeToFile(personEntityUser.toString());
+        this.personEntity = personEntityUser;
+        this.personDto = new DtoToEntity().PersonEntityToPersonDto(this.personEntity);
     }
 
     public FloatProperty getBenchMax()
     {
-        return this.person.benchMaxProperty();
+        return this.personDto.benchMaxProperty();
     }
 
     public FloatProperty getSquatMax()
     {
-        return this.person.squatMaxProperty();
+        return this.personDto.squatMaxProperty();
     }
     public FloatProperty getdeadliftMax()
     {
-        return this.person.deadliftMaxProperty();
+        return this.personDto.deadliftMaxProperty();
     }
 
 }

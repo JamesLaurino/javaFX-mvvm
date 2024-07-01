@@ -10,13 +10,14 @@ import javafx.scene.layout.VBox;
 import javafx.util.Duration;
 import javafx.util.converter.NumberStringConverter;
 import org.example.firstappfx.service.NavigationManager;
-import org.example.firstappfx.service.mock.PersonMock;
+import org.example.firstappfx.model.entity.PersonEntity;
 import org.example.firstappfx.viewmodel.MainViewModel;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import static org.example.firstappfx.service.mock.ListPersonMock.personMockList;
+import static org.example.firstappfx.service.data.PersonEntityDataService.personEntityListService;
+
 
 
 public class MainViewController implements Initializable
@@ -54,15 +55,15 @@ public class MainViewController implements Initializable
 
     @FXML
     private void goToSceneListViewController()  {
-        PersonMock personMock = new PersonMock(
+        PersonEntity personEntity = new PersonEntity(
                 firstNameField.getText().toString(),
                 Float.valueOf(benchField.getText().toString()),
                 Float.valueOf(deadliftField.getText().toString()),
                 Float.valueOf(squatField.getText().toString()));
 
-        personMockList.remove(0);
-        personMockList.add(personMock);
-        this.navigationManager.showWendlerProgramView(personMock);
+        personEntityListService.remove(0);
+        personEntityListService.add(personEntity);
+        this.navigationManager.showWendlerProgramView(personEntity);
     }
 
 
@@ -94,12 +95,12 @@ public class MainViewController implements Initializable
 
     public void goToSaveViewController()
     {
-        PersonMock personMock = new PersonMock(
+        PersonEntity personEntity = new PersonEntity(
                 firstNameField.getText().toString(),
                 Float.valueOf(benchField.getText().toString()),
                 Float.valueOf(deadliftField.getText().toString()),
                 Float.valueOf(squatField.getText().toString()));
 
-        this.navigationManager.showSaveView(personMock);
+        this.navigationManager.showSaveView(personEntity);
     }
 }

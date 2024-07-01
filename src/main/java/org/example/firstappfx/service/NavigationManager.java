@@ -4,7 +4,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import org.example.firstappfx.service.mock.PersonMock;
+import org.example.firstappfx.model.entity.PersonEntity;
 import org.example.firstappfx.view.SaveViewController;
 import org.example.firstappfx.view.WendlerProgramViewController;
 import org.example.firstappfx.view.MainViewController;
@@ -46,7 +46,7 @@ public class NavigationManager {
         }
     }
 
-    public void showSaveView(PersonMock personMockUser)
+    public void showSaveView(PersonEntity personEntityUser)
     {
         try
         {
@@ -55,7 +55,7 @@ public class NavigationManager {
             Parent root = loader.load();
 
             SaveViewController controller = loader.getController();
-            SaveViewModel saveViewModel = new SaveViewModel(personMockUser);
+            SaveViewModel saveViewModel = new SaveViewModel(personEntityUser);
 
             controller.setViewModel(saveViewModel);
             controller.setNavigationManager(this);
@@ -70,7 +70,7 @@ public class NavigationManager {
         }
     }
 
-    public void showWendlerProgramView(PersonMock personMockUser) {
+    public void showWendlerProgramView(PersonEntity personEntityUser) {
         try
         {
             FXMLLoader loader = new FXMLLoader(getClass()
@@ -78,7 +78,7 @@ public class NavigationManager {
             Parent root = loader.load();
 
             WendlerProgramViewController controller = loader.getController();
-            WendlerProgramViewModel wendlerProgramViewModel = new WendlerProgramViewModel(personMockUser);
+            WendlerProgramViewModel wendlerProgramViewModel = new WendlerProgramViewModel(personEntityUser);
 
             controller.setViewModel(wendlerProgramViewModel);
             controller.setNavigationManager(this);
