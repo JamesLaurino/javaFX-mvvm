@@ -1,24 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
-
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: BLACK;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.firstappfx.view.SaveViewController">
    <children>
-      <Label layoutX="156.0" layoutY="164.0" text="Values saved with success !" textFill="#fefcfc">
+      <Label layoutX="105.0" layoutY="77.0" text="Values saved with success !" textFill="#fefcfc">
          <font>
-            <Font size="24.0" />
+            <Font size="36.0" />
          </font>
       </Label>
-      <Button layoutX="234.0" layoutY="259.0" mnemonicParsing="false"
-              onMouseClicked="#gotoMainProgram"
-              prefHeight="47.0" prefWidth="131.0" text="main menu">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Button>
+      <HBox layoutX="178.0" layoutY="178.0" prefHeight="65.0" prefWidth="270.0" spacing="15.0">
+         <children>
+            <Button mnemonicParsing="false" onMouseClicked="#goToUserFormProgram" prefHeight="47.0" prefWidth="131.0" text="rollback">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onMouseClicked="#goToMainMenu" prefHeight="47.0" prefWidth="130.0" text="main menu">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </HBox>
    </children>
 </AnchorPane>

@@ -5,10 +5,12 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.example.firstappfx.model.entity.PersonEntity;
+import org.example.firstappfx.view.MainViewController;
 import org.example.firstappfx.view.SaveViewController;
 import org.example.firstappfx.view.WendlerProgramViewController;
-import org.example.firstappfx.view.MainViewController;
+import org.example.firstappfx.view.UserFormViewController;
 import org.example.firstappfx.viewmodel.MainViewModel;
+import org.example.firstappfx.viewmodel.UserFormViewModel;
 import org.example.firstappfx.viewmodel.SaveViewModel;
 import org.example.firstappfx.viewmodel.WendlerProgramViewModel;
 
@@ -22,18 +24,18 @@ public class NavigationManager {
         this.primaryStage = primaryStage;
     }
 
-    public void showMainView() {
+    public void showUserFormView() {
         try
         {
             FXMLLoader loader = new FXMLLoader(
-                    getClass().getResource("/mainView.fxml"));
+                    getClass().getResource("/UserFormView.fxml"));
 
             Parent root = loader.load();
 
-            MainViewModel mainViewModel = new MainViewModel();
-            MainViewController controller = loader.getController();
+            UserFormViewModel userFormViewModel = new UserFormViewModel();
+            UserFormViewController controller = loader.getController();
 
-            controller.setViewModel(mainViewModel);
+            controller.setViewModel(userFormViewModel);
             controller.setNavigationManager(this);
 
             primaryStage.setTitle("MVVM I");
@@ -81,6 +83,30 @@ public class NavigationManager {
             WendlerProgramViewModel wendlerProgramViewModel = new WendlerProgramViewModel(personEntityUser);
 
             controller.setViewModel(wendlerProgramViewModel);
+            controller.setNavigationManager(this);
+
+            primaryStage.setScene(new Scene(root));
+            primaryStage.setTitle("MVVM II");
+            primaryStage.show();
+
+        } catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+    }
+
+    public void showMainView()
+    {
+        try
+        {
+            FXMLLoader loader = new FXMLLoader(getClass()
+                    .getResource("/mainView.fxml"));
+            Parent root = loader.load();
+
+            MainViewController controller = loader.getController();
+            MainViewModel mainViewModel = new MainViewModel();
+
+            controller.setViewModel(mainViewModel);
             controller.setNavigationManager(this);
 
             primaryStage.setScene(new Scene(root));

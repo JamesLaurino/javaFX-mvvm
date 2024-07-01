@@ -23,7 +23,6 @@ public class WendlerProgramViewModel
     {
         return this.personDto.benchMaxProperty();
     }
-
     public FloatProperty getSquatMax()
     {
         return this.personDto.squatMaxProperty();

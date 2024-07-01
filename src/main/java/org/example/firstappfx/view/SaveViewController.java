@@ -1,6 +1,7 @@
 package org.example.firstappfx.view;
 
 import javafx.fxml.FXML;
+import javafx.scene.input.MouseEvent;
 import org.example.firstappfx.service.NavigationManager;
 import org.example.firstappfx.viewmodel.SaveViewModel;
 
@@ -16,7 +17,13 @@ public class SaveViewController {
     }
 
     @FXML
-    public void gotoMainProgram()
+    public void goToUserFormProgram()
+    {
+        navigationManager.showUserFormView();
+    }
+
+    @FXML
+    public void goToMainMenu(MouseEvent event)
     {
         navigationManager.showMainView();
     }

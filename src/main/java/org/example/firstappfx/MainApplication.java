@@ -14,7 +14,7 @@ public class MainApplication extends Application
     public void start(Stage primaryStage) throws IOException
     {
         NavigationManager navigationManager = new NavigationManager(primaryStage);
-        navigationManager.showMainView();
+        navigationManager.showUserFormView();
     }
 
     public static void main(String[] args)
